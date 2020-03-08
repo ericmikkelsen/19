@@ -1,0 +1,21 @@
+backend:
+    name: git-gateway
+publish_mode: editorial_workflow
+media_folder: "uploads" # Media files will be stored in the repo under images/uploads
+public_folder: "/images/uploads" 
+collections:
+    - name: "zipcode" # Used in routes, e.g., /admin/collections/blog
+      label: "Zipcode" # Used in the UI
+      folder: "zipcode" # The path to the folder where the documents are stored
+      create: true # Allow users to create new documents in this collection
+      slug: "{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
+      fields: # The fields for each document, usually in front matter
+        - {label: "Title", name: "title", widget: "number"}
+        - {label: "Publish Date", name: "date", widget: "datetime"}
+        - {label: "Body", name: "body", widget: "markdown"}
+        - {label: "Source URL", name: "source", widget: "string"}
+        - {label: "Phone Number", name: "phone", widget: "number"}
+        - {label: "Phone Number", name: "ext", widget: "number"}
+        - {label: "Twitter", name: "twitter", widget: "string"}
+        - {label: "Facebook", name: "facebook", widget: "string"}
+        - {label: "Upload", name: "facebook", widget: "string"}
