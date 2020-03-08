@@ -4,8 +4,8 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy("_redirects");
   eleventyConfig.addPassthroughCopy("assets/style.css");
   eleventyConfig.addPassthroughCopy("admin/index.html");
+  eleventyConfig.addPassthroughCopy("admin/config.yml");
   eleventyConfig.addPassthroughCopy("uploads");
-  eleventyConfig.addPassthroughCopy("config.yml");
 
   eleventyConfig.setBrowserSyncConfig({
     callbacks: {
