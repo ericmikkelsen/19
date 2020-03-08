@@ -13,10 +13,9 @@ collections:
     fields: # The fields for each document, usually in front matter
       - { label: "Title", name: "title", widget: "number" }
       - { label: "Publish Date", name: "date", widget: "datetime" }
-      - { label: "Body", name: "body", widget: "markdown" }
-      - { label: "Source URL", name: "source", widget: "string" }
-      - { label: "Phone Number", name: "phone", widget: "number" }
-      - { label: "Phone Number", name: "ext", widget: "number" }
-      - { label: "Twitter", name: "twitter", widget: "string" }
-      - { label: "Facebook", name: "facebook", widget: "string" }
-      - { label: "Upload", name: "facebook", widget: "string" }
+      - { label: "Body", name: "body", widget: "markdown", required: false }
+      - { label: "Source URL", name: "source", widget: "string", required: false }
+      - { label: "Phone Number", name: "phone", widget: "number", required: false }
+      - { label: "Twitter", name: "twitter", widget: "string", required: false }
+      - { label: "Facebook", name: "facebook", widget: "string", required: false }
+      - { label: "Upload", name: "facebook", widget: "string", required: false }
