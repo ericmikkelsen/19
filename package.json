@@ -4,7 +4,8 @@
   "description": "Site for info about COVID-19",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "npx eleventy",
+    "dev": "npx eleventy --serve"
   },
   "repository": {
     "type": "git",
@@ -21,6 +22,7 @@
   },
   "homepage": "https://github.com/ericmikkelsen/19#readme",
   "dependencies": {
+    "@11ty/eleventy": "^0.10.0",
     "netlify-cli": "^2.37.0"
   }
 }
