@@ -1,0 +1,26 @@
+{
+  "name": "19",
+  "version": "1.0.0",
+  "description": "Site for info about COVID-19",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ericmikkelsen/19.git"
+  },
+  "keywords": [
+    "health",
+    "information"
+  ],
+  "author": "Eric Mikkelsen",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ericmikkelsen/19/issues"
+  },
+  "homepage": "https://github.com/ericmikkelsen/19#readme",
+  "dependencies": {
+    "netlify-cli": "^2.37.0"
+  }
+}
