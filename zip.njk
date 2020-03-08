@@ -1,0 +1,15 @@
+---
+pagination:
+  data: collections
+  size: 1
+  alias: zip
+permalink: {{ zip }}/
+---
+<h1>zip code: “{{ zip }}”</h1>
+
+<ol>
+{% set taglist = collections[ zip ] %}
+{% for post in taglist | reverse %}
+  <li><a href="{{ post.url | url }}">{{ post.data.title }}</a></li>
+{% endfor %}
+</ol>
