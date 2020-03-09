@@ -9,7 +9,7 @@ collections:
     label: Health Care Provider # Used in the UI
     folder: "health-care-providers/{{fields.tags}}" # The path to the folder where the documents are stored
     create: true # Allow users to create new documents in this collection
-    slug: "{{slug}}.md" # Filename template, e.g., YYYY-MM-DD-title.md
+    slug: "{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
     fields: # The fields for each document, usually in front matter
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Provider URL", name: "provider_url", widget: "string", required: false }
@@ -25,7 +25,7 @@ collections:
       - { label: "Twitter", name: "twitter", widget: "string", required: false }
       - { label: "Facebook", name: "facebook", widget: "string", required: false }
       - { label: "Upload", name: "upload", widget: "string", required: false }
-      - label: "Permalink"
-        name: "permlink"
+      - label: "permalink"
+        name: "permalink"
         widget: "hidden"
-        default: "/{{fields.tag}}/{{slug}}"
+        default: "{{fields.tags}}/{{ title | slug }}/index.html"
