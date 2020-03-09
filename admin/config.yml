@@ -28,4 +28,4 @@ collections:
       - label: "permalink"
         name: "permalink"
         widget: "hidden"
-        default: "{{fields.tags}}/{{ title | slug }}/index.html"
+        default: "{{tags[0]}}/{{ title | slug }}/index.html"
