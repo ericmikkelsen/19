@@ -5,11 +5,11 @@ publish_mode: editorial_workflow
 media_folder: uploads # Media files will be stored in the repo under images/uploads
 public_folder: /images/uploads
 collections:
-  - name: health-care-provider # Used in routes, e.g., /admin/collections/blog
+  - name: health-care-providers # Used in routes, e.g., /admin/collections/blog
     label: Health Care Provider # Used in the UI
-    folder: health-care-providers/{{fields.tags}} # The path to the folder where the documents are stored
+    folder: "health-care-providers/{{fields.tags}}" # The path to the folder where the documents are stored
     create: true # Allow users to create new documents in this collection
-    slug: "{{fields.tags}}/{{slug}}/" # Filename template, e.g., YYYY-MM-DD-title.md
+    slug: "{{slug}}.md" # Filename template, e.g., YYYY-MM-DD-title.md
     fields: # The fields for each document, usually in front matter
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Provider URL", name: "provider_url", widget: "string", required: false }
