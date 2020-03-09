@@ -25,3 +25,7 @@ collections:
       - { label: "Twitter", name: "twitter", widget: "string", required: false }
       - { label: "Facebook", name: "facebook", widget: "string", required: false }
       - { label: "Upload", name: "upload", widget: "string", required: false }
+      - label: "Permalink"
+        name: "permlink"
+        widget: "hidden"
+        default: "/{{fields.tag}}/{{slug}}"
