@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build": "npx eleventy",
-    "dev": "npx eleventy --serve"
+    "dev": "npx netlify dev"
   },
   "repository": {
     "type": "git",
