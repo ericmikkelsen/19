@@ -6,7 +6,7 @@ unit: '300'
 city: Albany
 state: CA
 tags: '94706'
-phone: 9255132483
+phone: "19255132483"
 permalink: '{{tags[0]}}/{{ title | slug }}/index.html'
 ---
 Sutter Health is committed to the health and well-being of our patients, caregivers and community. In light of the COVID-19 public health emergency, we are taking extra precautions to reduce the risk of the spread of the disease.

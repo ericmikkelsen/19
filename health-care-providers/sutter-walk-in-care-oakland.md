@@ -7,7 +7,7 @@ unit: Suite B
 city: Oakland
 state: CA
 tags: '94609'
-phone: 8009725547
+phone: "18009725547"
 fax: ''
 permalink: "{{tags[0]}}/{{ title | slug }}/index.html"
 ---
