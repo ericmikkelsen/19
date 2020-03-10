@@ -1,6 +1,7 @@
 ---
 title: Sutter Walk-In Care Oakland
 provider_url: https://myhealthonline.sutterhealth.org/mho/scheduling/onmyway/?dispGroups=26606&_ga=2.133041101.278201463.1562195936-1524904045.1562195936&shqnr=true
+provider_notice_url: https://www.sutterhealth.org/myhealthonline/book-call?shqnr=false
 address: 5095 Telegraph Ave.
 unit: Suite B
 city: Oakland
