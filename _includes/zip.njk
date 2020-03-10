@@ -1,4 +1,6 @@
-<h1>Tagged “{{ tag }}”</h1>
+{% include _head.liquid %}
+
+<h1>Zipcode {{ tag }}</h1>
 
 <ol>
   {% set taglist = collections[ tag ] %}
@@ -6,3 +8,5 @@
     <li><a href="{{ post.url | url }}">{{ post.data.title }}</a></li>
   {% endfor %}
 </ol>
+
+{% include _foot.liquid %}
