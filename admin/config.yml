@@ -21,7 +21,11 @@ collections:
       - { label: "Zip", name: "tags", widget: "string"}
       - { label: "Body", name: "body", widget: "markdown", required: false }
       - { label: "Email", name: "email", widget: "string", required: false }
-      - { label: "Phone Number", name: "phone", widget: "number", required: false }
+      - label: Phone Number
+        name: phone
+        widget: string
+        pattern: ['.{11,}', "Must have at least 11 characters"]
+        required: false
       - { label: "Fax", name: "fax", widget: "number", required: false }
       - { label: "Twitter", name: "twitter", widget: "string", required: false }
       - { label: "Facebook", name: "facebook", widget: "string", required: false }
