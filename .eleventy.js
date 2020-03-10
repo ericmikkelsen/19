@@ -7,6 +7,16 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy("admin/config.yml");
   eleventyConfig.addPassthroughCopy("uploads");
 
+  // 
+  eleventyConfig.addFilter("phoneFormat", function( phoneNumber ) {
+    const countryCode = phoneNumber.toString().slice(0,1);
+    const areaCode = phoneNumber.toString().slice(1,4);
+    const prefix = phoneNumber.toString().slice(4,7);
+    const suffix = phoneNumber.toString().slice(7,11);
+    return `${countryCode}-${areaCode}-${prefix}-${suffix}`;
+  });
+
+
   eleventyConfig.setBrowserSyncConfig({
     callbacks: {
       ready: function(err, bs) {
