@@ -8,7 +8,8 @@ collections:
   - name: counties # Used in routes, e.g., /admin/collections/blog
     label: Counties # Used in the UI
     create: true # Allow users to create new documents in this collection
-    path: "{{state}}/{{slug}}" # https://www.netlifycms.org/docs/beta-features/#folder-collections-path
+    folder: "counties" # https://www.netlifycms.org/docs/beta-features/#folder-collections-path
+    slug: "{{state}}/{{slug}}"
     fields: # The fields for each document, usually in front matter
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Email address for questions from county", name: "email", widget: "string", required: false }
