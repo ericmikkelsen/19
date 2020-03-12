@@ -1,5 +1,5 @@
 ---
-title: Alameda
+title: Alameda County
 county_url: 'http://www.acphd.org/2019-ncov.aspx'
 email: ''
 phone: '15102678000'
