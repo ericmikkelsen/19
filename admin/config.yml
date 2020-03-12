@@ -1,36 +1,96 @@
-backend: 
+backend:
   repo: ericmikkelsen/19
   name: git-gateway
 publish_mode: editorial_workflow
 media_folder: uploads # Media files will be stored in the repo under images/uploads
 public_folder: /images/uploads
 collections:
-  - name: health-care-providers # Used in routes, e.g., /admin/collections/blog
-    label: Health Care Provider # Used in the UI
-    folder: health-care-providers # The path to the folder where the documents are stored
+  - name: counties # Used in routes, e.g., /admin/collections/blog
+    label: Counties # Used in the UI
     create: true # Allow users to create new documents in this collection
-    slug: "{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
+    path: "{{state}}/{{slug}}" # https://www.netlifycms.org/docs/beta-features/#folder-collections-path
     fields: # The fields for each document, usually in front matter
       - { label: "Title", name: "title", widget: "string" }
-      - { label: "Provider URL", name: "provider_url", widget: "string", required: false }
-      - { label: "Provider COVID-19 notice URL", name: "provider_notice_url", widget: "string", required: false }
-      - { label: "Street Address", name: "address",widget: "string" }
-      - { label: "Unit number", name: "unit", widget: "string", required: false }
-      - { label: "City or Town", name: "city", widget: "string"} 
-      - { label: "State", name: "state", widget: "string"} 
-      - { label: "Zip", name: "tags", widget: "string"}
-      - { label: "Body", name: "body", widget: "markdown", required: false }
-      - { label: "Email", name: "email", widget: "string", required: false }
-      - label: Phone Number
+      - { label: "Email address for questions from county", name: "email", widget: "string", required: false }
+      - label: Phone Number to call for county
         name: phone
         widget: string
-        pattern: ['.{11,}', "Must have at least 11 characters"]
+        pattern: [".{11,}", "Must have at least 11 characters"]
         required: false
-      - { label: "Fax", name: "fax", widget: "number", required: false }
-      - { label: "Twitter", name: "twitter", widget: "string", required: false }
-      - { label: "Facebook", name: "facebook", widget: "string", required: false }
-      - { label: "Upload", name: "upload", widget: "string", required: false }
+      - label: "State"
+        name: "state"
+        widget: "select"
+        options:
+          [
+            { "label": "Alabama", "value": "AL" },
+            { "label": "Alaska", "value": "AK" },
+            { "label": "American Samoa", "value": "AS" },
+            { "label": "Arizona", "value": "AZ" },
+            { "label": "Arkansas", "value": "AR" },
+            { "label": "California", "value": "CA" },
+            { "label": "Colorado", "value": "CO" },
+            { "label": "Connecticut", "value": "CT" },
+            { "label": "Delaware", "value": "DE" },
+            { "label": "District Of Columbia", "value": "DC" },
+            { "label": "Federated States Of Micronesia", "value": "FM" },
+            { "label": "Florida", "value": "FL" },
+            { "label": "Georgia", "value": "GA" },
+            { "label": "Guam", "value": "GU" },
+            { "label": "Hawaii", "value": "HI" },
+            { "label": "Idaho", "value": "ID" },
+            { "label": "Illinois", "value": "IL" },
+            { "label": "Indiana", "value": "IN" },
+            { "label": "Iowa", "value": "IA" },
+            { "label": "Kansas", "value": "KS" },
+            { "label": "Kentucky", "value": "KY" },
+            { "label": "Louisiana", "value": "LA" },
+            { "label": "Maine", "value": "ME" },
+            { "label": "Marshall Islands", "value": "MH" },
+            { "label": "Maryland", "value": "MD" },
+            { "label": "Massachusetts", "value": "MA" },
+            { "label": "Michigan", "value": "MI" },
+            { "label": "Minnesota", "value": "MN" },
+            { "label": "Mississippi", "value": "MS" },
+            { "label": "Missouri", "value": "MO" },
+            { "label": "Montana", "value": "MT" },
+            { "label": "Nebraska", "value": "NE" },
+            { "label": "Nevada", "value": "NV" },
+            { "label": "New Hampshire", "value": "NH" },
+            { "label": "New Jersey", "value": "NJ" },
+            { "label": "New Mexico", "value": "NM" },
+            { "label": "New York", "value": "NY" },
+            { "label": "North Carolina", "value": "NC" },
+            { "label": "North Dakota", "value": "ND" },
+            { "label": "Northern Mariana Islands", "value": "MP" },
+            { "label": "Ohio", "value": "OH" },
+            { "label": "Oklahoma", "value": "OK" },
+            { "label": "Oregon", "value": "OR" },
+            { "label": "Palau", "value": "PW" },
+            { "label": "Pennsylvania", "value": "PA" },
+            { "label": "Puerto Rico", "value": "PR" },
+            { "label": "Rhode Island", "value": "RI" },
+            { "label": "South Carolina", "value": "SC" },
+            { "label": "South Dakota", "value": "SD" },
+            { "label": "Tennessee", "value": "TN" },
+            { "label": "Texas", "value": "TX" },
+            { "label": "Utah", "value": "UT" },
+            { "label": "Vermont", "value": "VT" },
+            { "label": "Virgin Islands", "value": "VI" },
+            { "label": "Virginia", "value": "VA" },
+            { "label": "Washington", "value": "WA" },
+            { "label": "West Virginia", "value": "WV" },
+            { "label": "Wisconsin", "value": "WI" },
+            { "label": "Wyoming", "value": "WY" },
+          ]
+      - {
+          label: "Facebook Profile URL",
+          name: "facebook_profile_url",
+          widget: "string",
+          required: false,
+        }
+      - { label: "Twitter Profile URL", name: "twitter_profile_url", widget: "string", required: false }
+      - { label: "Body", name: "body", widget: "markdown", required: false }
       - label: "permalink"
         name: "permalink"
         widget: "hidden"
-        default: "{{tags[0]}}/{{ title | slug }}/index.html"
+        default: "{{state}}/{{ title | slug }}/index.html"
